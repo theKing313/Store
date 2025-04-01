@@ -7,6 +7,11 @@ const fetchProducts = async () => {
   return data;
 };
 
+
+
 export const useProducts = () => {
-  return useQuery<Product[], Error>(['products'], fetchProducts);
+  return useQuery<Product[], Error>({
+    queryKey: ['products'],  
+    queryFn: fetchProducts, 
+  });
 };

@@ -1,12 +1,12 @@
 "use client"
 import { useForm } from "react-hook-form";
-// import { useProductStore } from "@/store/products";
 import { useRouter } from "next/navigation"; 
 import { useProductStore } from "@/store/product";
 import styles from "./index.module.scss";
 import { Product } from "@/types";
+
 const Page = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm<Product>();
   const { addProduct } = useProductStore();
   const router = useRouter();
 
@@ -18,8 +18,8 @@ const Page = () => {
       isFavorite: false,
       description: data.description, 
       rating: {
-        count: Number(data.rating.count) || 0, 
-        rate: Number(data.rating.rate) || 0, 
+        count: Number(data.rating?.count) || 0, 
+        rate: Number(data.rating?.rate) || 0, 
       },
       price: Number(data.price) || 0, 
     });

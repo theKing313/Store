@@ -4,7 +4,7 @@ import { create } from 'zustand';
 
 interface ProductStore {
   products: Product[];
-  product: Product;
+  product: Product | null;
   favorites: number[];
   setProducts: (product: Product[]) => void;
   addProduct: (product: Product) => void;
@@ -18,19 +18,16 @@ interface ProductStore {
 
 
 export const useProductStore = create<ProductStore>((set) => ({
-  product:{},
+  product: null, 
   products: typeof window !== "undefined" 
     ? JSON.parse(localStorage.getItem("products") || "[]") 
     : [],
-  
   favorites: typeof window !== "undefined" 
     ? JSON.parse(localStorage.getItem("favorites") || "[]") 
     : [],
-
     filteredProducts : typeof window !== "undefined" 
     ? JSON.parse(localStorage.getItem("filteredProducts") || "[]") 
     : [],
-
   setProducts: (products) => {
     localStorage.setItem("products", JSON.stringify(products));
     set(() => ({ products }));
