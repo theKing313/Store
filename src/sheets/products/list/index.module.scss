@@ -1,0 +1,88 @@
+.root {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+    &>.info{
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: 400;
+    }
+}
+
+
+.default {
+    .img {
+        height: 240px;
+        position: relative;
+
+        img {
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    }
+    .price{
+        color: #ffffff;
+    }
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        p {
+            color: #ed5434;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            text-transform: uppercase;
+        }
+
+        button {
+            display: flex;
+        }
+    }
+
+    .name {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #ffffff;
+        font-family: var(--font-roboto);
+
+        margin-top: 5px;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-top: 6px;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 13px;
+            line-height: 16px;
+            font-family: var(--sf_pro_display);
+        }
+
+        .guard {
+            color: #0f7ee4;
+        }
+
+        .location {
+            color: #797b83;
+        }
+    }
+    & button{
+        cursor: pointer;
+    }
+}
+

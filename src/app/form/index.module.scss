@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #181818;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  margin-top: 200px;
+  color: #fff;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+
+  &:focus {
+    background: #333;
+  }
+}
+
+.button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #e63e00;
+  }
+}
